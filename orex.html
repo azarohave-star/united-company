@@ -1,0 +1,3373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>United Company | Egyptian Olives</title>
+
+<meta name="description" content="United Company connects international buyers with Egyptian olive factories offering green olives, black olives, pitted olives, sliced olives and customized specifications.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',Arial,sans-serif;
+    color:#182019;
+    background:#fff;
+    line-height:1.7;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================
+   COLORS
+========================= */
+
+:root{
+    --green:#244d1d;
+    --dark:#0c210f;
+    --olive:#879b43;
+    --light:#f5f5ed;
+    --text:#182019;
+    --gray:#6e766d;
+    --border:#e3e7de;
+    --white:#fff;
+}
+
+/* =========================
+   LANGUAGE
+========================= */
+
+.ar{
+    display:none;
+}
+
+body.arabic .en{
+    display:none;
+}
+
+body.arabic .ar{
+    display:inline;
+}
+
+body.arabic{
+    direction:rtl;
+    text-align:right;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+
+.top{
+    background:var(--dark);
+    color:#dbe5d8;
+    font-size:11px;
+    padding:9px 0;
+}
+
+.top-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.top-left{
+    display:flex;
+    gap:25px;
+}
+
+.top a:hover{
+    color:#fff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    height:82px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:999;
+}
+
+.nav-inner{
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-circle{
+    width:48px;
+    height:48px;
+    background:var(--green);
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    font-weight:700;
+}
+
+.logo-title{
+    color:var(--green);
+    font-size:17px;
+    font-weight:800;
+    line-height:1.1;
+}
+
+.logo-sub{
+    color:#777;
+    font-size:8px;
+    letter-spacing:1.5px;
+    margin-top:5px;
+}
+
+.nav{
+    display:flex;
+    list-style:none;
+    gap:27px;
+    align-items:center;
+}
+
+.nav a{
+    font-size:11px;
+    font-weight:700;
+    color:#303a30;
+}
+
+.nav a:hover{
+    color:var(--green);
+}
+
+.nav-buttons{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.lang{
+    border:1px solid var(--border);
+    background:#fff;
+    color:var(--green);
+    border-radius:30px;
+    padding:9px 13px;
+    font-size:10px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    color:var(--green);
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height:690px;
+    position:relative;
+    overflow:hidden;
+    background:#09180b;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    transition:opacity .8s ease;
+}
+
+.slide.active{
+    opacity:1;
+}
+
+.slide img{
+    height:100%;
+    object-fit:cover;
+}
+
+.slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(5,19,7,.92),
+        rgba(5,19,7,.65) 48%,
+        rgba(5,19,7,.15)
+    );
+}
+
+.hero-content{
+    position:absolute;
+    z-index:5;
+    inset:0;
+    display:flex;
+    align-items:center;
+}
+
+.hero-text{
+    max-width:730px;
+    color:white;
+}
+
+.small-title{
+    color:#c9d69d;
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(42px,6vw,75px);
+    line-height:1.05;
+    font-weight:600;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#c5d38f;
+}
+
+.hero p{
+    color:#e7eee5;
+    font-size:14px;
+    line-height:1.9;
+    max-width:690px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-height:48px;
+    padding:0 22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+    font-weight:800;
+    border-radius:3px;
+    transition:.3s;
+}
+
+.green-btn{
+    background:var(--olive);
+    color:#fff;
+}
+
+.green-btn:hover{
+    background:#9cac54;
+    transform:translateY(-2px);
+}
+
+.white-btn{
+    border:1px solid rgba(255,255,255,.6);
+    color:#fff;
+}
+
+.white-btn:hover{
+    background:#fff;
+    color:var(--green);
+}
+
+.dots{
+    position:absolute;
+    z-index:10;
+    bottom:28px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:7px;
+}
+
+.dot{
+    width:30px;
+    height:3px;
+    border:0;
+    background:rgba(255,255,255,.35);
+    cursor:pointer;
+}
+
+.dot.active{
+    background:#fff;
+    width:50px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    position:relative;
+}
+
+.section{
+    padding:95px 0;
+}
+
+.center{
+    text-align:center;
+    max-width:720px;
+    margin:0 auto 50px;
+}
+
+.kicker{
+    color:var(--olive);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.title{
+    font-family:'Playfair Display',serif;
+    color:var(--green);
+    font-size:clamp(34px,4vw,52px);
+    line-height:1.12;
+    margin-bottom:18px;
+}
+
+.text{
+    color:var(--gray);
+    font-size:13px;
+    line-height:2;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    padding:100px 0;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1.1fr;
+    gap:75px;
+    align-items:center;
+}
+
+.about-photo{
+    height:440px;
+    object-fit:cover;
+}
+
+.about-image{
+    position:relative;
+}
+
+.about-badge{
+    position:absolute;
+    bottom:25px;
+    left:-25px;
+    background:var(--green);
+    color:#fff;
+    width:190px;
+    padding:22px;
+}
+
+.about-badge strong{
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+    display:block;
+}
+
+.about-badge small{
+    color:#d8e3d4;
+    font-size:9px;
+}
+
+/* =========================
+   FACTORY NETWORK
+========================= */
+
+.network{
+    background:var(--light);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    padding:30px 23px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 40px rgba(20,50,20,.1);
+}
+
+.icon{
+    width:47px;
+    height:47px;
+    background:#edf2e4;
+    color:var(--green);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:18px;
+}
+
+.card h3{
+    color:var(--green);
+    font-size:15px;
+    margin-bottom:9px;
+}
+
+.card p{
+    color:var(--gray);
+    font-size:11px;
+    line-height:1.8;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.process-card{
+    border:1px solid var(--border);
+    padding:27px;
+}
+
+.number{
+    font-family:'Playfair Display',serif;
+    color:#dce5d4;
+    font-size:45px;
+    line-height:1;
+    margin-bottom:15px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:var(--green);
+    color:white;
+    padding:42px 0;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    text-align:center;
+    padding:10px 20px;
+    border-right:1px solid rgba(255,255,255,.16);
+}
+
+.stat:last-child{
+    border:0;
+}
+
+.stat strong{
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-size:40px;
+    color:#d1de9c;
+}
+
+.stat span{
+    color:#dce6da;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    padding:100px 0;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.product{
+    border:1px solid var(--border);
+    background:#fff;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 45px rgba(20,50,20,.12);
+}
+
+.product-img{
+    height:260px;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+}
+
+.product-img img{
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product:hover img{
+    transform:scale(1.06);
+}
+
+.tag{
+    position:absolute;
+    left:15px;
+    top:15px;
+    background:rgba(35,77,29,.93);
+    color:white;
+    padding:7px 10px;
+    font-size:8px;
+    font-weight:800;
+    text-transform:uppercase;
+}
+
+.product-body{
+    padding:24px;
+}
+
+.product h3{
+    font-family:'Playfair Display',serif;
+    color:var(--green);
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.product p{
+    color:var(--gray);
+    font-size:11px;
+    line-height:1.8;
+    margin-bottom:17px;
+}
+
+.product-link{
+    color:var(--green);
+    font-size:9px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+    background:var(--light);
+    padding:90px 0;
+}
+
+.details-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.details-img{
+    height:460px;
+    object-fit:cover;
+}
+
+.details ul{
+    list-style:none;
+    margin-top:25px;
+}
+
+.details li{
+    padding:11px 0;
+    border-bottom:1px solid var(--border);
+    color:var(--gray);
+    font-size:11px;
+}
+
+.details li::before{
+    content:"✓";
+    color:var(--olive);
+    font-weight:bold;
+    margin-right:10px;
+}
+
+/* =========================
+   MARKETS
+========================= */
+
+.markets{
+    padding:100px 0;
+}
+
+.market-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.market-box{
+    background:var(--dark);
+    min-height:430px;
+    padding:50px;
+    color:#fff;
+}
+
+.market-box h3{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    line-height:1.15;
+    margin-bottom:18px;
+}
+
+.market-box p{
+    color:#cbd8c9;
+    font-size:11px;
+    line-height:1.9;
+}
+
+.market-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:28px;
+}
+
+.market-list span{
+    border:1px solid rgba(255,255,255,.13);
+    padding:11px;
+    font-size:10px;
+}
+
+.points{
+    margin-top:25px;
+}
+
+.point{
+    display:flex;
+    gap:12px;
+    margin-bottom:15px;
+}
+
+.check{
+    width:27px;
+    height:27px;
+    background:#edf2e5;
+    color:var(--green);
+    border-radius:50%;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:11px;
+}
+
+.point p{
+    color:var(--gray);
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================
+   QUALITY
+========================= */
+
+.quality{
+    background:var(--light);
+}
+
+.quality-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.certificates{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.cert{
+    background:#fff;
+    border:1px solid var(--border);
+    text-align:center;
+    padding:22px 10px;
+}
+
+.cert strong{
+    color:var(--green);
+    font-size:13px;
+    display:block;
+}
+
+.cert small{
+    color:#777;
+    font-size:8px;
+}
+
+/* =========================
+   TEAM
+========================= */
+
+.team{
+    background:var(--light);
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    max-width:800px;
+    margin:auto;
+    gap:20px;
+}
+
+.person{
+    background:white;
+    border:1px solid var(--border);
+    text-align:center;
+    padding:30px;
+}
+
+.avatar{
+    width:75px;
+    height:75px;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+}
+
+.person h3{
+    color:var(--green);
+    font-size:15px;
+}
+
+.person p{
+    color:#777;
+    font-size:9px;
+}
+
+.person a{
+    color:var(--olive);
+    font-size:10px;
+    font-weight:700;
+    display:block;
+    margin-top:10px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    grid-template-rows:230px 230px;
+    gap:10px;
+}
+
+.gallery-item{
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:var(--dark);
+    color:white;
+    padding:95px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:65px;
+    align-items:start;
+}
+
+.contact .title{
+    color:white;
+}
+
+.contact-text{
+    color:#cbd7c9;
+    font-size:12px;
+    line-height:1.9;
+}
+
+.contact-info{
+    margin-top:25px;
+    display:grid;
+    gap:10px;
+}
+
+.contact-info a{
+    color:#e1e9df;
+    font-size:11px;
+}
+
+.form{
+    background:white;
+    color:var(--text);
+    padding:32px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.form-group{
+    margin-bottom:13px;
+}
+
+.form-group label{
+    display:block;
+    color:#666;
+    font-size:9px;
+    font-weight:700;
+    margin-bottom:5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+    border:1px solid var(--border);
+    padding:12px;
+    font-size:11px;
+    outline:none;
+}
+
+.form-group textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.submit{
+    width:100%;
+    border:0;
+    cursor:pointer;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    background:var(--olive);
+    color:white;
+    padding:75px 0;
+}
+
+.cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    line-height:1.15;
+}
+
+.cta p{
+    font-size:11px;
+    margin-top:8px;
+}
+
+.cta .btn{
+    background:#fff;
+    color:var(--green);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#071208;
+    color:white;
+    padding:60px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.footer-about{
+    color:#8c998b;
+    font-size:10px;
+    line-height:1.9;
+    max-width:340px;
+    margin-top:15px;
+}
+
+.footer h4{
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:15px;
+}
+
+.footer-links{
+    display:grid;
+    gap:8px;
+}
+
+.footer-links a{
+    color:#849183;
+    font-size:10px;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.bottom{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    color:#647064;
+    font-size:8px;
+    padding-top:20px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:55px;
+    height:55px;
+    background:#25d366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+    z-index:1000;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:3000;
+    padding:30px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal img{
+    max-width:90vw;
+    max-height:85vh;
+    width:auto;
+}
+
+.close{
+    position:absolute;
+    right:25px;
+    top:20px;
+    background:white;
+    color:var(--green);
+    width:40px;
+    height:40px;
+    border:0;
+    border-radius:50%;
+    font-size:25px;
+    cursor:pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:1000px){
+
+    .nav{
+        display:none;
+        position:absolute;
+        left:0;
+        right:0;
+        top:82px;
+        background:white;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:25px 5%;
+        box-shadow:0 15px 35px rgba(0,0,0,.1);
+    }
+
+    .nav.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .cards,
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-grid,
+    .details-grid,
+    .market-grid,
+    .quality-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .top{
+        display:none;
+    }
+
+    .navbar{
+        height:70px;
+    }
+
+    .nav{
+        top:70px;
+    }
+
+    .logo-circle{
+        width:40px;
+        height:40px;
+        font-size:19px;
+    }
+
+    .logo-title{
+        font-size:14px;
+    }
+
+    .logo-sub{
+        font-size:6px;
+    }
+
+    .hero{
+        height:620px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .cards,
+    .process-grid,
+    .products-grid,
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .stat{
+        border:0;
+    }
+
+    .about-photo,
+    .details-img{
+        height:330px;
+    }
+
+    .about-badge{
+        left:15px;
+    }
+
+    .certificates{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:180px 180px 180px;
+    }
+
+    .gallery-item:first-child{
+        grid-row:span 2;
+    }
+
+    .market-box{
+        padding:35px 25px;
+    }
+
+    .market-list{
+        grid-template-columns:1fr;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .form{
+        padding:22px;
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .bottom{
+        flex-direction:column;
+    }
+
+    body.arabic .about-badge{
+        right:15px;
+        left:auto;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     TOP
+========================= -->
+
+<div class="top">
+    <div class="container top-inner">
+
+        <div class="top-left">
+
+            <a href="mailto:Azarohave@gmail.com">
+                ✉ Azarohave@gmail.com
+            </a>
+
+            <a href="https://wa.me/201279518633" target="_blank">
+                ☎ +20 127 951 8633
+            </a>
+
+        </div>
+
+        <div>
+            <span class="en">Egyptian Olive Factory Network</span>
+            <span class="ar">شبكة المصانع المصرية للزيتون</span>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<header class="navbar">
+
+<div class="container nav-inner">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-circle">U</div>
+
+        <div>
+            <div class="logo-title">
+                UNITED COMPANY
+            </div>
+
+            <div class="logo-sub">
+                <span class="en">EGYPTIAN OLIVE FACTORY NETWORK</span>
+                <span class="ar">شبكة المصانع المصرية للزيتون</span>
+            </div>
+        </div>
+
+    </a>
+
+
+    <ul class="nav" id="nav">
+
+        <li>
+            <a href="#home">
+                <span class="en">Home</span>
+                <span class="ar">الرئيسية</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#about">
+                <span class="en">About</span>
+                <span class="ar">من نحن</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#products">
+                <span class="en">Olives</span>
+                <span class="ar">الزيتون</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#network">
+                <span class="en">Factories</span>
+                <span class="ar">المصانع</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#markets">
+                <span class="en">Markets</span>
+                <span class="ar">الأسواق</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#quality">
+                <span class="en">Quality</span>
+                <span class="ar">الجودة</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#contact">
+                <span class="en">Contact</span>
+                <span class="ar">تواصل معنا</span>
+            </a>
+        </li>
+
+    </ul>
+
+
+    <div class="nav-buttons">
+
+        <button class="lang" onclick="language()">
+            <span id="languageButton">AR</span>
+        </button>
+
+        <button class="menu" onclick="menu()">
+            ☰
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="slide active">
+
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+        alt="Green Olives">
+
+        <div class="hero-content">
+
+            <div class="container">
+
+                <div class="hero-text">
+
+                    <div class="small-title">
+                        <span class="en">UNITED COMPANY</span>
+                        <span class="ar">الشركة المتحدة</span>
+                    </div>
+
+                    <h1>
+                        <span class="en">
+                            Egyptian Olives.<br>
+                            Global Connections.
+                        </span>
+
+                        <span class="ar">
+                            زيتون مصري.<br>
+                            علاقات عالمية.
+                        </span>
+                    </h1>
+
+                    <p>
+                        <span class="en">
+                            United Company connects international buyers with a network of established Egyptian olive factories, offering different products, preparations, sizes, specifications, packaging and commercial options.
+                        </span>
+
+                        <span class="ar">
+                            الشركة المتحدة تربط المشترين من مختلف دول العالم بشبكة من المصانع المصرية المتخصصة في الزيتون، وتوفر منتجات وتجهيزات وأحجام ومواصفات وعبوات وخيارات تجارية مختلفة.
+                        </span>
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#products" class="btn green-btn">
+                            <span class="en">Explore Olives</span>
+                            <span class="ar">منتجات الزيتون</span>
+                        </a>
+
+                        <a href="#contact" class="btn white-btn">
+                            <span class="en">Request A Quote</span>
+                            <span class="ar">اطلب عرض سعر</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slide">
+
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/0/01/Schwarze_Oliven.jpg"
+        alt="Black Olives">
+
+        <div class="hero-content">
+
+            <div class="container">
+
+                <div class="hero-text">
+
+                    <div class="small-title">
+                        <span class="en">FACTORY NETWORK</span>
+                        <span class="ar">شبكة المصانع</span>
+                    </div>
+
+                    <h1>
+                        <span class="en">
+                            More Factories.<br>
+                            More Possibilities.
+                        </span>
+
+                        <span class="ar">
+                            مصانع أكثر.<br>
+                            اختيارات أكثر.
+                        </span>
+                    </h1>
+
+                    <p>
+                        <span class="en">
+                            We work with several Egyptian factories and help international buyers find suitable suppliers according to product specifications, packaging and commercial requirements.
+                        </span>
+
+                        <span class="ar">
+                            نعمل مع عدة مصانع مصرية ونساعد المشترين الدوليين في الوصول إلى المورد المناسب حسب مواصفات المنتج والتعبئة والمتطلبات التجارية.
+                        </span>
+                    </p>
+
+                    <a href="#network" class="btn green-btn">
+                        <span class="en">Our Factory Network</span>
+                        <span class="ar">شبكة المصانع</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="slide">
+
+        <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/5d/DFC_3933_A_close-up_of_a_pile_of_pitted_green_olives_showing_their_smooth_glossy_skins_and_hollow_centers.jpg"
+        alt="Pitted Olives">
+
+        <div class="hero-content">
+
+            <div class="container">
+
+                <div class="hero-text">
+
+                    <div class="small-title">
+                        <span class="en">GLOBAL BUYERS</span>
+                        <span class="ar">عملاء من العالم</span>
+                    </div>
+
+                    <h1>
+                        <span class="en">
+                            From Egypt<br>
+                            To Your Market.
+                        </span>
+
+                        <span class="ar">
+                            من مصر<br>
+                            إلى أسواقكم.
+                        </span>
+                    </h1>
+
+                    <p>
+                        <span class="en">
+                            Our customers and buyers come from different markets around the world. We coordinate with supplying factories to develop export business efficiently.
+                        </span>
+
+                        <span class="ar">
+                            نتعامل مع مشترين وعملاء من أسواق مختلفة حول العالم، وننسق مع المصانع الموردة لتطوير أعمال التصدير بكفاءة.
+                        </span>
+                    </p>
+
+                    <a href="#markets" class="btn green-btn">
+                        <span class="en">Global Markets</span>
+                        <span class="ar">الأسواق العالمية</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="dots">
+
+        <button class="dot active" onclick="slideTo(0)"></button>
+        <button class="dot" onclick="slideTo(1)"></button>
+        <button class="dot" onclick="slideTo(2)"></button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+    <div>
+
+        <div class="kicker">
+            <span class="en">ABOUT UNITED COMPANY</span>
+            <span class="ar">عن الشركة المتحدة</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                One Connection.<br>
+                Multiple Egyptian Factories.
+            </span>
+
+            <span class="ar">
+                علاقة واحدة.<br>
+                ومصانع مصرية متعددة.
+            </span>
+        </h2>
+
+        <p class="text">
+
+            <span class="en">
+                United Company is a sourcing and export business built around strong relationships with several established Egyptian olive factories.
+                <br><br>
+                Our role is to connect international buyers with suitable factories according to their needs. Through our network, buyers can explore different olive products, preparations, sizes, specifications, packaging solutions and commercial price levels.
+                <br><br>
+                The supplying factories cooperate with and authorize United Company to introduce qualified buyers and develop export business. Our commission is agreed with and paid by the supplying factory — not by the importer.
+            </span>
+
+            <span class="ar">
+                الشركة المتحدة هي شركة متخصصة في التوريد وتطوير أعمال التصدير، وتعتمد على علاقات قوية مع مجموعة من المصانع المصرية المتخصصة في الزيتون.
+                <br><br>
+                نقوم بربط المشترين الدوليين بالمصنع المناسب وفقاً لاحتياجاتهم. ومن خلال شبكة المصانع لدينا يستطيع المشتري الوصول إلى منتجات وتجهيزات وأحجام ومواصفات وعبوات ومستويات أسعار مختلفة.
+                <br><br>
+                تتعاون المصانع الموردة مع الشركة المتحدة وتسمح لها بجلب المشترين المؤهلين وتطوير أعمال التصدير. وتحصل الشركة المتحدة على العمولة المتفق عليها من المصنع المورد وليس من المستورد.
+            </span>
+
+        </p>
+
+    </div>
+
+
+    <div class="about-image">
+
+        <img
+        class="about-photo"
+        src="https://upload.wikimedia.org/wikipedia/commons/0/01/Schwarze_Oliven.jpg"
+        alt="Black Olives">
+
+        <div class="about-badge">
+
+            <strong>Egypt → World</strong>
+
+            <small>
+                <span class="en">
+                    Egyptian olive factories connected to international buyers.
+                </span>
+
+                <span class="ar">
+                    ربط المصانع المصرية بالمشترين الدوليين.
+                </span>
+            </small>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NETWORK
+========================= -->
+
+<section class="section network" id="network">
+
+<div class="container">
+
+    <div class="center">
+
+        <div class="kicker">
+            <span class="en">OUR FACTORY NETWORK</span>
+            <span class="ar">شبكة المصانع</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                A Wider Egyptian Olive Supply Network
+            </span>
+
+            <span class="ar">
+                شبكة أوسع لتوريد الزيتون المصري
+            </span>
+        </h2>
+
+        <p class="text">
+            <span class="en">
+                Different factories give buyers access to more choices and more flexible commercial solutions.
+            </span>
+
+            <span class="ar">
+                تعدد المصانع يعطي المشتري اختيارات أكثر وحلولاً تجارية أكثر مرونة.
+            </span>
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icon">01</div>
+
+            <h3>
+                <span class="en">Multiple Factories</span>
+                <span class="ar">مصانع متعددة</span>
+            </h3>
+
+            <p>
+                <span class="en">
+                    We work with several established Egyptian olive factories.
+                </span>
+
+                <span class="ar">
+                    نعمل مع عدة مصانع مصرية متخصصة في الزيتون.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">02</div>
+
+            <h3>
+                <span class="en">Wide Olive Range</span>
+                <span class="ar">مجموعة واسعة</span>
+            </h3>
+
+            <p>
+                <span class="en">
+                    Green, black, pitted, sliced and different olive preparations.
+                </span>
+
+                <span class="ar">
+                    أخضر وأسود ومنزوع النوى وشرائح وتجهيزات مختلفة.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">03</div>
+
+            <h3>
+                <span class="en">Different Price Levels</span>
+                <span class="ar">أسعار مختلفة</span>
+            </h3>
+
+            <p>
+                <span class="en">
+                    Different factories can offer different commercial levels depending on specifications.
+                </span>
+
+                <span class="ar">
+                    اختلاف المصانع يتيح مستويات تجارية مختلفة حسب المواصفات.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">04</div>
+
+            <h3>
+                <span class="en">Strong Relationships</span>
+                <span class="ar">علاقات قوية</span>
+            </h3>
+
+            <p>
+                <span class="en">
+                    Strong relationships help us coordinate efficiently with supplying factories.
+                </span>
+
+                <span class="ar">
+                    العلاقات القوية تساعدنا على التنسيق بكفاءة مع المصانع الموردة.
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROCESS
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="center">
+
+        <div class="kicker">
+            <span class="en">HOW WE WORK</span>
+            <span class="ar">كيف نعمل</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                From Buyer Requirement To Factory Supply
+            </span>
+
+            <span class="ar">
+                من طلب المشتري إلى المصنع المورد
+            </span>
+        </h2>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-card">
+
+            <div class="number">01</div>
+
+            <h3>
+                <span class="en">Buyer Requirement</span>
+                <span class="ar">متطلبات المشتري</span>
+            </h3>
+
+            <p class="text">
+                <span class="en">
+                    Product, size, preparation, packaging and quantity.
+                </span>
+
+                <span class="ar">
+                    المنتج والحجم والتجهيز والعبوة والكمية.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="number">02</div>
+
+            <h3>
+                <span class="en">Factory Matching</span>
+                <span class="ar">اختيار المصنع</span>
+            </h3>
+
+            <p class="text">
+                <span class="en">
+                    We identify suitable factories inside our network.
+                </span>
+
+                <span class="ar">
+                    نحدد المصنع المناسب داخل شبكة المصانع.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="number">03</div>
+
+            <h3>
+                <span class="en">Commercial Coordination</span>
+                <span class="ar">التنسيق التجاري</span>
+            </h3>
+
+            <p class="text">
+                <span class="en">
+                    We coordinate specifications, offers and export requirements.
+                </span>
+
+                <span class="ar">
+                    ننسق المواصفات والعروض ومتطلبات التصدير.
+                </span>
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="number">04</div>
+
+            <h3>
+                <span class="en">Factory-Paid Commission</span>
+                <span class="ar">عمولة من المصنع</span>
+            </h3>
+
+            <p class="text">
+                <span class="en">
+                    Our agreed commission is paid by the supplying factory, not the importer.
+                </span>
+
+                <span class="ar">
+                    العمولة المتفق عليها تدفع من المصنع المورد وليس من المستورد.
+                </span>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+<div class="container stats-grid">
+
+    <div class="stat">
+        <strong>+</strong>
+        <span>
+            <span class="en">Egyptian Factories</span>
+            <span class="ar">مصانع مصرية</span>
+        </span>
+    </div>
+
+    <div class="stat">
+        <strong>∞</strong>
+        <span>
+            <span class="en">Global Buyers</span>
+            <span class="ar">مشترون حول العالم</span>
+        </span>
+    </div>
+
+    <div class="stat">
+        <strong>360°</strong>
+        <span>
+            <span class="en">Factory Options</span>
+            <span class="ar">خيارات المصانع</span>
+        </span>
+    </div>
+
+    <div class="stat">
+        <strong>0%</strong>
+        <span>
+            <span class="en">Importer Commission</span>
+            <span class="ar">عمولة المستورد</span>
+        </span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products" id="products">
+
+<div class="container">
+
+    <div class="center">
+
+        <div class="kicker">
+            <span class="en">OUR OLIVES</span>
+            <span class="ar">منتجات الزيتون</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                Egyptian Olives For Global Markets
+            </span>
+
+            <span class="ar">
+                زيتون مصري للأسواق العالمية
+            </span>
+        </h2>
+
+        <p class="text">
+            <span class="en">
+                Our factory network provides different olive preparations, sizes and specifications.
+            </span>
+
+            <span class="ar">
+                توفر شبكة المصانع لدينا تجهيزات وأحجام ومواصفات مختلفة من الزيتون.
+            </span>
+        </p>
+
+    </div>
+
+
+    <div class="products-grid">
+
+
+        <!-- GREEN -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+                alt="Green Olives">
+
+                <div class="tag">Green Olives</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Green Olives</span>
+                    <span class="ar">الزيتون الأخضر</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Whole green olives available in different sizes, preparations and packaging options.
+                    </span>
+
+                    <span class="ar">
+                        زيتون أخضر كامل بأحجام وتجهيزات وعبوات مختلفة.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">REQUEST DETAILS →</span>
+                    <span class="ar">اطلب التفاصيل ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BLACK -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/01/Schwarze_Oliven.jpg"
+                alt="Black Olives">
+
+                <div class="tag">Black Olives</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Black Olives</span>
+                    <span class="ar">الزيتون الأسود</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Egyptian black olives in different sizes and commercial preparations.
+                    </span>
+
+                    <span class="ar">
+                        زيتون أسود مصري بأحجام وتجهيزات تجارية مختلفة.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">REQUEST DETAILS →</span>
+                    <span class="ar">اطلب التفاصيل ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PITTED -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/5d/DFC_3933_A_close-up_of_a_pile_of_pitted_green_olives_showing_their_smooth_glossy_skins_and_hollow_centers.jpg"
+                alt="Pitted Olives">
+
+                <div class="tag">Pitted</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Pitted Olives</span>
+                    <span class="ar">زيتون منزوع النوى</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Pitted olives prepared for retail, foodservice and industrial applications.
+                    </span>
+
+                    <span class="ar">
+                        زيتون منزوع النوى مناسب للتجزئة والمطاعم والصناعات الغذائية.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">REQUEST DETAILS →</span>
+                    <span class="ar">اطلب التفاصيل ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SLICED -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/01/GreekSalad2.JPG"
+                alt="Sliced Olives">
+
+                <div class="tag">Sliced</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Sliced Olives</span>
+                    <span class="ar">زيتون شرائح</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Sliced olive preparations for foodservice, pizza, salads and food manufacturing.
+                    </span>
+
+                    <span class="ar">
+                        زيتون شرائح للمطاعم والبيتزا والسلطات والصناعات الغذائية.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">REQUEST DETAILS →</span>
+                    <span class="ar">اطلب التفاصيل ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- KALAMATA -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/0/01/Schwarze_Oliven.jpg"
+                alt="Kalamata Type Olives">
+
+                <div class="tag">Kalamata</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Kalamata Type</span>
+                    <span class="ar">زيتون كلاماتا</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Kalamata-type olives according to factory availability and buyer specifications.
+                    </span>
+
+                    <span class="ar">
+                        زيتون من نوع كلاماتا حسب توافر المصنع والمواصفات المطلوبة.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">ASK AVAILABILITY →</span>
+                    <span class="ar">اسأل عن التوافر ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOM -->
+
+        <div class="product">
+
+            <div class="product-img" onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+                alt="Custom Olive Specifications">
+
+                <div class="tag">Custom</div>
+
+            </div>
+
+            <div class="product-body">
+
+                <h3>
+                    <span class="en">Custom Specifications</span>
+                    <span class="ar">مواصفات خاصة</span>
+                </h3>
+
+                <p>
+                    <span class="en">
+                        Specific size, preparation, packaging or commercial requirement? Ask us to check the network.
+                    </span>
+
+                    <span class="ar">
+                        تحتاج إلى حجم أو تجهيز أو عبوة أو مواصفة معينة؟ اطلب منا البحث داخل الشبكة.
+                    </span>
+                </p>
+
+                <a href="#contact" class="product-link">
+                    <span class="en">SEND REQUIREMENT →</span>
+                    <span class="ar">أرسل متطلباتك ←</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DETAILS
+========================= -->
+
+<section class="details">
+
+<div class="container details-grid">
+
+    <div>
+
+        <img
+        class="details-img"
+        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+        alt="Green Olives">
+
+    </div>
+
+
+    <div>
+
+        <div class="kicker">
+            <span class="en">FLEXIBLE SPECIFICATIONS</span>
+            <span class="ar">مواصفات مرنة</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                Your Market.<br>
+                Your Specification.
+            </span>
+
+            <span class="ar">
+                سوقك.<br>
+                ومواصفاتك.
+            </span>
+        </h2>
+
+        <p class="text">
+            <span class="en">
+                Different markets require different olive specifications. Our factory network allows us to search for suitable options according to your requirements.
+            </span>
+
+            <span class="ar">
+                تختلف متطلبات الزيتون من سوق إلى آخر. وتسمح لنا شبكة المصانع بالبحث عن الخيارات المناسبة وفقاً لمتطلباتك.
+            </span>
+        </p>
+
+        <ul>
+
+            <li>
+                <span class="en">Whole olives</span>
+                <span class="ar">زيتون كامل</span>
+            </li>
+
+            <li>
+                <span class="en">Pitted olives</span>
+                <span class="ar">زيتون منزوع النوى</span>
+            </li>
+
+            <li>
+                <span class="en">Sliced olives</span>
+                <span class="ar">زيتون شرائح</span>
+            </li>
+
+            <li>
+                <span class="en">Different sizes and grades</span>
+                <span class="ar">أحجام ودرجات مختلفة</span>
+            </li>
+
+            <li>
+                <span class="en">Different packaging solutions</span>
+                <span class="ar">حلول تعبئة مختلفة</span>
+            </li>
+
+            <li>
+                <span class="en">FOB export options</span>
+                <span class="ar">خيارات تصدير FOB</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MARKETS
+========================= -->
+
+<section class="markets" id="markets">
+
+<div class="container market-grid">
+
+    <div class="market-box">
+
+        <div class="kicker">
+            <span class="en">GLOBAL BUYER NETWORK</span>
+            <span class="ar">شبكة المشترين العالمية</span>
+        </div>
+
+        <h3>
+            <span class="en">
+                From Egyptian Factories To Markets Around The World.
+            </span>
+
+            <span class="ar">
+                من المصانع المصرية إلى الأسواق حول العالم.
+            </span>
+        </h3>
+
+        <p>
+            <span class="en">
+                United Company works with customers and buyers from different international markets.
+            </span>
+
+            <span class="ar">
+                تعمل الشركة المتحدة مع عملاء ومشترين من أسواق دولية مختلفة.
+            </span>
+        </p>
+
+        <div class="market-list">
+
+            <span>Brazil</span>
+            <span>United States</span>
+            <span>Europe</span>
+            <span>India</span>
+            <span>Pakistan</span>
+            <span>Latin America</span>
+            <span>Asia</span>
+            <span>Worldwide</span>
+
+        </div>
+
+    </div>
+
+
+    <div>
+
+        <div class="kicker">
+            <span class="en">INTERNATIONAL BUSINESS</span>
+            <span class="ar">الأعمال الدولية</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                One Commercial Connection.
+            </span>
+
+            <span class="ar">
+                جهة تجارية واحدة.
+            </span>
+        </h2>
+
+        <p class="text">
+            <span class="en">
+                We simplify the connection between international buyers and Egyptian olive factories.
+            </span>
+
+            <span class="ar">
+                نقوم بتسهيل عملية الربط بين المشترين الدوليين والمصانع المصرية.
+            </span>
+        </p>
+
+        <div class="points">
+
+            <div class="point">
+
+                <div class="check">✓</div>
+
+                <p>
+                    <span class="en">
+                        Multiple factory options.
+                    </span>
+
+                    <span class="ar">
+                        خيارات من عدة مصانع.
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <div class="check">✓</div>
+
+                <p>
+                    <span class="en">
+                        Different specifications and price levels.
+                    </span>
+
+                    <span class="ar">
+                        مواصفات ومستويات أسعار مختلفة.
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <div class="check">✓</div>
+
+                <p>
+                    <span class="en">
+                        Coordination with supplying factories.
+                    </span>
+
+                    <span class="ar">
+                        تنسيق مع المصانع الموردة.
+                    </span>
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <div class="check">✓</div>
+
+                <p>
+                    <span class="en">
+                        Commission paid by the factory, not the importer.
+                    </span>
+
+                    <span class="ar">
+                        العمولة تدفع من المصنع وليس من المستورد.
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUALITY
+========================= -->
+
+<section class="section quality" id="quality">
+
+<div class="container quality-grid">
+
+    <div>
+
+        <div class="kicker">
+            <span class="en">QUALITY & CERTIFICATION</span>
+            <span class="ar">الجودة والشهادات</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                Quality Requirements For International Markets
+            </span>
+
+            <span class="ar">
+                متطلبات الجودة للأسواق الدولية
+            </span>
+        </h2>
+
+        <p class="text">
+            <span class="en">
+                Certification availability depends on the supplying factory and should be confirmed for each specific order.
+            </span>
+
+            <span class="ar">
+                توافر الشهادات يعتمد على المصنع المورد ويجب تأكيدها لكل طلب.
+            </span>
+        </p>
+
+    </div>
+
+
+    <div class="certificates">
+
+        <div class="cert">
+            <strong>ISO 22000</strong>
+            <small>Food Safety</small>
+        </div>
+
+        <div class="cert">
+            <strong>ISO 9001</strong>
+            <small>Quality</small>
+        </div>
+
+        <div class="cert">
+            <strong>HACCP</strong>
+            <small>Food Safety</small>
+        </div>
+
+        <div class="cert">
+            <strong>FDA</strong>
+            <small>Compliance</small>
+        </div>
+
+        <div class="cert">
+            <strong>HALAL</strong>
+            <small>Certification</small>
+        </div>
+
+        <div class="cert">
+            <strong>KOSHER</strong>
+            <small>Certification</small>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     TEAM
+========================= -->
+
+<section class="section team">
+
+<div class="container">
+
+    <div class="center">
+
+        <div class="kicker">
+            <span class="en">MANAGEMENT</span>
+            <span class="ar">الإدارة</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">United Company Team</span>
+            <span class="ar">فريق الشركة المتحدة</span>
+        </h2>
+
+    </div>
+
+
+    <div class="team-grid">
+
+        <div class="person">
+
+            <div class="avatar">SM</div>
+
+            <h3>Seifallah Mohamed</h3>
+
+            <p>
+                <span class="en">
+                    Management & Export Coordination
+                </span>
+
+                <span class="ar">
+                    الإدارة وتنسيق التصدير
+                </span>
+            </p>
+
+            <a href="https://wa.me/201024127178" target="_blank">
+                +20 102 412 7178
+            </a>
+
+        </div>
+
+
+        <div class="person">
+
+            <div class="avatar">MA</div>
+
+            <h3>Mohamed Ahmed</h3>
+
+            <p>
+                <span class="en">
+                    Management & International Business
+                </span>
+
+                <span class="ar">
+                    الإدارة والأعمال الدولية
+                </span>
+            </p>
+
+            <a href="https://wa.me/201279518633" target="_blank">
+                +20 127 951 8633
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+    <div class="center">
+
+        <div class="kicker">
+            <span class="en">OLIVE GALLERY</span>
+            <span class="ar">معرض الزيتون</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">Egyptian Olive Products</span>
+            <span class="ar">منتجات الزيتون المصري</span>
+        </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item"
+             onclick="openImage(this.querySelector('img').src)">
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+            alt="Green Olives">
+
+        </div>
+
+
+        <div class="gallery-item"
+             onclick="openImage(this.querySelector('img').src)">
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/01/Schwarze_Oliven.jpg"
+            alt="Black Olives">
+
+        </div>
+
+
+        <div class="gallery-item"
+             onclick="openImage(this.querySelector('img').src)">
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5d/DFC_3933_A_close-up_of_a_pile_of_pitted_green_olives_showing_their_smooth_glossy_skins_and_hollow_centers.jpg"
+            alt="Pitted Olives">
+
+        </div>
+
+
+        <div class="gallery-item"
+             onclick="openImage(this.querySelector('img').src)">
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/01/GreekSalad2.JPG"
+            alt="Sliced Olives">
+
+        </div>
+
+
+        <div class="gallery-item"
+             onclick="openImage(this.querySelector('img').src)">
+
+            <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Green_olives.jpg"
+            alt="Olives">
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<div class="container contact-grid">
+
+    <div>
+
+        <div class="kicker">
+            <span class="en">REQUEST FOR QUOTATION</span>
+            <span class="ar">طلب عرض سعر</span>
+        </div>
+
+        <h2 class="title">
+            <span class="en">
+                Tell Us What Olive You Need.
+            </span>
+
+            <span class="ar">
+                أخبرنا بما تحتاجه من الزيتون.
+            </span>
+        </h2>
+
+        <p class="contact-text">
+
+            <span class="en">
+                Send us your product requirements, quantity, packaging and destination. We will check suitable options across our Egyptian factory network.
+                <br><br>
+                United Company does not charge commission to the importer. Our commission is agreed with and paid by the supplying factory.
+            </span>
+
+            <span class="ar">
+                أرسل لنا متطلبات المنتج والكمية والعبوة ووجهة الشحن، وسنبحث عن الخيارات المناسبة داخل شبكة المصانع المصرية.
+                <br><br>
+                الشركة المتحدة لا تحصل على عمولة من المستورد، وإنما يتم الاتفاق على العمولة ودفعها من المصنع المورد.
+            </span>
+
+        </p>
+
+
+        <div class="contact-info">
+
+            <a href="mailto:Azarohave@gmail.com">
+                ✉ Azarohave@gmail.com
+            </a>
+
+            <a href="https://wa.me/201024127178" target="_blank">
+                ☎ +20 102 412 7178
+            </a>
+
+            <a href="https://wa.me/201279518633" target="_blank">
+                ☎ +20 127 951 8633
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <form class="form" onsubmit="sendWhatsApp(event)">
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Name</span>
+                    <span class="ar">الاسم</span>
+                </label>
+
+                <input id="name" type="text" required placeholder="Your name">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Company</span>
+                    <span class="ar">الشركة</span>
+                </label>
+
+                <input id="company" type="text" placeholder="Company">
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Country</span>
+                    <span class="ar">الدولة</span>
+                </label>
+
+                <input id="country" type="text" placeholder="Country">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Product</span>
+                    <span class="ar">المنتج</span>
+                </label>
+
+                <select id="product">
+
+                    <option>Green Olives</option>
+                    <option>Black Olives</option>
+                    <option>Pitted Olives</option>
+                    <option>Sliced Olives</option>
+                    <option>Kalamata Type</option>
+                    <option>Custom Specification</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Quantity</span>
+                    <span class="ar">الكمية</span>
+                </label>
+
+                <input id="quantity" type="text" placeholder="Example: 1 x 20 FT">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    <span class="en">Packaging</span>
+                    <span class="ar">التعبئة</span>
+                </label>
+
+                <input id="packaging" type="text" placeholder="Packaging">
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                <span class="en">Your Requirement</span>
+                <span class="ar">متطلباتك</span>
+            </label>
+
+            <textarea id="message" placeholder="Tell us your requirements..."></textarea>
+
+        </div>
+
+
+        <button class="btn green-btn submit" type="submit">
+
+            <span class="en">SEND VIA WHATSAPP</span>
+            <span class="ar">إرسال عبر واتساب</span>
+
+        </button>
+
+    </form>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container cta-inner">
+
+    <div>
+
+        <h2>
+            <span class="en">
+                Looking for the right Egyptian olive factory?
+            </span>
+
+            <span class="ar">
+                تبحث عن المصنع المصري المناسب للزيتون؟
+            </span>
+        </h2>
+
+        <p>
+            <span class="en">
+                Let United Company check the available options across our factory network.
+            </span>
+
+            <span class="ar">
+                دع الشركة المتحدة تبحث لك عن الخيارات المناسبة داخل شبكة المصانع.
+            </span>
+        </p>
+
+    </div>
+
+
+    <a href="#contact" class="btn">
+        <span class="en">Contact Us</span>
+        <span class="ar">تواصل معنا</span>
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-circle">U</div>
+
+                <div>
+
+                    <div class="logo-title" style="color:white;">
+                        UNITED COMPANY
+                    </div>
+
+                    <div class="logo-sub" style="color:#758273;">
+                        <span class="en">EGYPTIAN OLIVE FACTORY NETWORK</span>
+                        <span class="ar">شبكة المصانع المصرية للزيتون</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="footer-about">
+
+                <span class="en">
+                    United Company connects international olive buyers with established Egyptian factories and helps develop export business across different markets.
+                </span>
+
+                <span class="ar">
+                    الشركة المتحدة تربط المشترين الدوليين بالمصانع المصرية المتخصصة في الزيتون وتساعد في تطوير أعمال التصدير في الأسواق المختلفة.
+                </span>
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                <span class="en">Company</span>
+                <span class="ar">الشركة</span>
+            </h4>
+
+            <div class="footer-links">
+
+                <a href="#about">
+                    <span class="en">About</span>
+                    <span class="ar">من نحن</span>
+                </a>
+
+                <a href="#network">
+                    <span class="en">Factory Network</span>
+                    <span class="ar">شبكة المصانع</span>
+                </a>
+
+                <a href="#quality">
+                    <span class="en">Quality</span>
+                    <span class="ar">الجودة</span>
+                </a>
+
+                <a href="#contact">
+                    <span class="en">Contact</span>
+                    <span class="ar">تواصل معنا</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                <span class="en">Olives</span>
+                <span class="ar">الزيتون</span>
+            </h4>
+
+            <div class="footer-links">
+
+                <a href="#products">Green Olives</a>
+                <a href="#products">Black Olives</a>
+                <a href="#products">Pitted Olives</a>
+                <a href="#products">Sliced Olives</a>
+                <a href="#products">Kalamata</a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                <span class="en">Contact</span>
+                <span class="ar">تواصل</span>
+            </h4>
+
+            <div class="footer-links">
+
+                <a href="mailto:Azarohave@gmail.com">
+                    Azarohave@gmail.com
+                </a>
+
+                <a href="https://wa.me/201024127178" target="_blank">
+                    +20 102 412 7178
+                </a>
+
+                <a href="https://wa.me/201279518633" target="_blank">
+                    +20 127 951 8633
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom">
+
+        <span>
+            © 2026 United Company. All Rights Reserved.
+        </span>
+
+        <span>
+            <span class="en">Egyptian Olive Factory Network</span>
+            <span class="ar">شبكة المصانع المصرية للزيتون</span>
+        </span>
+
+    </div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/201279518633"
+target="_blank"
+class="whatsapp"
+aria-label="WhatsApp">
+
+    ☎
+
+</a>
+
+
+<!-- =========================
+     IMAGE MODAL
+========================= -->
+
+<div class="modal" id="modal" onclick="closeImage(event)">
+
+    <button class="close" onclick="closeImage()">
+        ×
+    </button>
+
+    <img id="modalImg" src="" alt="United Company product">
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function menu(){
+
+    document.getElementById("nav").classList.toggle("open");
+
+}
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
+function language(){
+
+    document.body.classList.toggle("arabic");
+
+    var button = document.getElementById("languageButton");
+
+    if(document.body.classList.contains("arabic")){
+
+        button.innerHTML = "EN";
+        document.documentElement.lang = "ar";
+
+    }else{
+
+        button.innerHTML = "AR";
+        document.documentElement.lang = "en";
+
+    }
+
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+var slides = document.querySelectorAll(".slide");
+var dots = document.querySelectorAll(".dot");
+
+var current = 0;
+
+function slideTo(index){
+
+    slides.forEach(function(slide){
+        slide.classList.remove("active");
+    });
+
+    dots.forEach(function(dot){
+        dot.classList.remove("active");
+    });
+
+    current = index;
+
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+
+}
+
+
+setInterval(function(){
+
+    current++;
+
+    if(current >= slides.length){
+        current = 0;
+    }
+
+    slideTo(current);
+
+},6000);
+
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+function openImage(src){
+
+    document.getElementById("modalImg").src = src;
+
+    document.getElementById("modal").classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+function closeImage(event){
+
+    if(event && event.target !== document.getElementById("modal")){
+        return;
+    }
+
+    document.getElementById("modal").classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape"){
+
+        document.getElementById("modal").classList.remove("show");
+
+        document.body.style.overflow = "";
+
+    }
+
+});
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+document.querySelectorAll(".nav a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document.getElementById("nav").classList.remove("open");
+
+    });
+
+});
+
+
+/* =========================
+   WHATSAPP FORM
+========================= */
+
+function sendWhatsApp(event){
+
+    event.preventDefault();
+
+    var name =
+        document.getElementById("name").value;
+
+    var company =
+        document.getElementById("company").value;
+
+    var country =
+        document.getElementById("country").value;
+
+    var product =
+        document.getElementById("product").value;
+
+    var quantity =
+        document.getElementById("quantity").value;
+
+    var packaging =
+        document.getElementById("packaging").value;
+
+    var message =
+        document.getElementById("message").value;
+
+
+    var text =
+        "Hello United Company,%0A%0A" +
+
+        "I would like to request an olive quotation.%0A%0A" +
+
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Company: " + encodeURIComponent(company) + "%0A" +
+        "Country: " + encodeURIComponent(country) + "%0A%0A" +
+
+        "Product: " + encodeURIComponent(product) + "%0A" +
+        "Quantity: " + encodeURIComponent(quantity) + "%0A" +
+        "Packaging: " + encodeURIComponent(packaging) + "%0A%0A" +
+
+        "Requirements:%0A" +
+        encodeURIComponent(message) + "%0A%0A" +
+
+        "Please share the available specifications, prices and export terms.";
+
+
+    window.open(
+        "https://wa.me/201279518633?text=" + text,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CLOSE MODAL WHEN CLICKING
+   OUTSIDE IMAGE
+========================= */
+
+document.getElementById("modalImg").addEventListener("click",function(e){
+
+    e.stopPropagation();
+
+});
+
+</script>
+
+</body>
+</html>
